@@ -2,6 +2,8 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {GlobalStyles} from '../../utils/GlobalStyles';
 import {ChooseNoneSvg} from '../../images/svg/ChooseNoneSvg';
+import {RunNonActiveSvg} from '../../images/svg/RunNonActiveSvg';
+import {GettingSvg} from '../../images/svg/GettingSvg';
 
 export const FindCourier = () => {
   return (
@@ -9,8 +11,8 @@ export const FindCourier = () => {
       <Text style={GlobalStyles.header}>Курьер найден</Text>
       <View style={styles.svgContainer}>
         <ChooseNoneSvg />
-        <ChooseNoneSvg />
-        <ChooseNoneSvg />
+        <GettingSvg />
+        <RunNonActiveSvg />
       </View>
       <View style={styles.comments}>
         <Text style={GlobalStyles.comments}>
