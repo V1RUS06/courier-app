@@ -5,6 +5,7 @@ import {Header} from '../Header';
 import {FindCourier} from '../Card/FindСourier';
 import {CourierCard} from '../Card/CourierCard';
 import {ShoppingAssistant} from '../Card/ShoppingAssistant';
+import {DetailsCard} from '../Card/DetailsCard';
 
 export const OrderSheet = () => {
   const [isStretch, setIesStretch] = useState(true);
@@ -35,6 +36,9 @@ export const OrderSheet = () => {
         </Wrapper>
         <Wrapper>
           <ShoppingAssistant />
+        </Wrapper>
+        <Wrapper>
+          <DetailsCard />
         </Wrapper>
       </ScrollView>
     </View>
