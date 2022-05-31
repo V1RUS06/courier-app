@@ -3,6 +3,7 @@ import {Text, StyleSheet, ScrollView, View, Dimensions} from 'react-native';
 import {Wrapper} from '../Wrapper';
 import {Header} from '../Header';
 import {FindCourier} from '../Card/FindСourier';
+import {CourierCard} from '../Card/CourierCard';
 
 export const OrderSheet = () => {
   const [isStretch, setIesStretch] = useState(false);
@@ -21,7 +22,7 @@ export const OrderSheet = () => {
     <View
       style={[
         styles.container,
-        isStretch ? {height: windowHeight - 180} : {height: windowHeight - 450},
+        isStretch ? {height: windowHeight - 180} : {height: windowHeight - 410},
       ]}>
       <Header onStretchClick={onStretchClick} />
       <ScrollView style={styles.scrollContainer}>
@@ -29,29 +30,11 @@ export const OrderSheet = () => {
           <FindCourier />
         </Wrapper>
         <Wrapper>
-          <Text>Order sheet</Text>
+          <CourierCard name="Мария" number="+7 926 586 48 73" />
         </Wrapper>
         <Wrapper>
           <Text>Order sheet</Text>
         </Wrapper>
-        {/*<Wrapper>*/}
-        {/*  <Text>Order sheet</Text>*/}
-        {/*</Wrapper>*/}
-        {/*<Wrapper>*/}
-        {/*  <Text>Order sheet</Text>*/}
-        {/*</Wrapper>*/}
-        {/*<Wrapper>*/}
-        {/*  <Text>Order sheet</Text>*/}
-        {/*</Wrapper>*/}
-        {/*<Wrapper>*/}
-        {/*  <Text>Order sheet</Text>*/}
-        {/*</Wrapper>*/}
-        {/*<Wrapper>*/}
-        {/*  <Text>Order sheet</Text>*/}
-        {/*</Wrapper>*/}
-        {/*<Wrapper>*/}
-        {/*  <Text>Order sheet</Text>*/}
-        {/*</Wrapper>*/}
       </ScrollView>
     </View>
   );

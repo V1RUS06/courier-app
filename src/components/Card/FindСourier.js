@@ -12,6 +12,12 @@ export const FindCourier = () => {
         <ChooseNoneSvg />
         <ChooseNoneSvg />
       </View>
+      <View style={styles.comments}>
+        <Text style={GlobalStyles.comments}>
+          Находим за 15 мин и не ранее, чем за 1.5 часа до прибытия на первую
+          точку
+        </Text>
+      </View>
     </View>
   );
 };

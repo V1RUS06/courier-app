@@ -7,4 +7,9 @@ export const GlobalStyles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  comments: {
+    fontSize: 12,
+    color: '#B2BDC5',
+    textAlign: 'center',
+  },
 });
