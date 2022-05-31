@@ -5,6 +5,7 @@ import {ShopCard} from './ShopCard';
 import {TimeDeliver} from './TimeDeliver';
 import {ShoppingList} from './ShoppingList';
 import {Button} from '../../Button';
+import {DeliverAddressCard} from './DeliverAddressCard';
 
 export const ShoppingAssistant = () => {
   const onRepeatClick = () => {};
@@ -38,6 +39,9 @@ export const ShoppingAssistant = () => {
         price="1500.00"
         time="10:15 - 10 : 30"
       />
+      <View style={styles.line} />
+      <DeliverAddressCard />
+      <View style={styles.line} />
       <TimeDeliver />
       <View style={styles.line} />
       <ShoppingList />

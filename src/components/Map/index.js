@@ -44,7 +44,6 @@ export const Map = () => {
     },
   ];
 
-  console.log('render');
   const onChangeMarker = e => {
     setCourierData({
       ...courierData,
