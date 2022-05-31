@@ -4,8 +4,11 @@ import {GlobalStyles} from '../../../utils/GlobalStyles';
 import {ShopCard} from './ShopCard';
 import {TimeDeliver} from './TimeDeliver';
 import {ShoppingList} from './ShoppingList';
+import {Button} from '../../Button';
 
 export const ShoppingAssistant = () => {
+  const onRepeatClick = () => {};
+
   return (
     <View>
       <Text style={[GlobalStyles.header, {marginBottom: 20}]}>
@@ -38,7 +41,8 @@ export const ShoppingAssistant = () => {
       <TimeDeliver />
       <View style={styles.line} />
       <ShoppingList />
-      <View style={styles.line} />
+      <View style={[styles.line, {marginBottom: 20}]} />
+      <Button onPress={onRepeatClick} name="Повторить" />
     </View>
   );
 };
