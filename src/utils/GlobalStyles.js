@@ -12,4 +12,9 @@ export const GlobalStyles = StyleSheet.create({
     color: '#B2BDC5',
     textAlign: 'center',
   },
+  subTitle: {
+    fontSize: 16,
+    color: '#4B595C',
+    fontWeight: 'bold',
+  },
 });

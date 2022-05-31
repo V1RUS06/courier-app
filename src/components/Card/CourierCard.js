@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {HandsetSvg} from '../../images/svg/HandsetSvg';
 import {MessageSvg} from '../../images/svg/MessageSvg';
+import {GlobalStyles} from '../../utils/GlobalStyles';
 
 export const CourierCard = ({name, number}) => {
   return (
@@ -9,7 +10,7 @@ export const CourierCard = ({name, number}) => {
       <View style={styles.container}>
         <View style={styles.avatar} />
         <View style={styles.infoContainer}>
-          <Text style={styles.name}>Курьер {name}</Text>
+          <Text style={GlobalStyles.subTitle}>Курьер {name}</Text>
           <Text style={styles.number}>{number}</Text>
         </View>
       </View>

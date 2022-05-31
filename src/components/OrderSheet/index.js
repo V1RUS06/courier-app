@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {Text, StyleSheet, ScrollView, View, Dimensions} from 'react-native';
+import {StyleSheet, ScrollView, View, Dimensions} from 'react-native';
 import {Wrapper} from '../Wrapper';
 import {Header} from '../Header';
 import {FindCourier} from '../Card/FindСourier';
 import {CourierCard} from '../Card/CourierCard';
+import {ShoppingAssistant} from '../Card/ShoppingAssistant';
 
 export const OrderSheet = () => {
-  const [isStretch, setIesStretch] = useState(false);
+  const [isStretch, setIesStretch] = useState(true);
   const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export const OrderSheet = () => {
           <CourierCard name="Мария" number="+7 926 586 48 73" />
         </Wrapper>
         <Wrapper>
-          <Text>Order sheet</Text>
+          <ShoppingAssistant />
         </Wrapper>
       </ScrollView>
     </View>
