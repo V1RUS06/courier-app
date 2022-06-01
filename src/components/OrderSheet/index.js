@@ -10,11 +10,12 @@ import {PurchasesCard} from '../Card/PurchasesCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {setHelpOpen} from '../../redux/slice/modalsSlice';
 import {HelpModal} from '../Modals/HelpModal';
+import {PeculiaritiesModal} from '../Modals/PeculiaritiesModal';
 
 export const OrderSheet = () => {
   const [isStretch, setIesStretch] = useState(true);
   const [windowHeight, setWindowHeight] = useState(0);
-  const {helpOpen} = useSelector(state => state.modal);
+  const {helpOpen, peculiaritiesOpen} = useSelector(state => state.modal);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export const OrderSheet = () => {
           </Wrapper>
         </ScrollView>
       </View>
+      {peculiaritiesOpen && <PeculiaritiesModal />}
       {helpOpen && <HelpModal />}
     </>
   );

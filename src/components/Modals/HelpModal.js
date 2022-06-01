@@ -8,7 +8,7 @@ import {HandsetSvg} from '../../images/svg/HandsetSvg';
 import {ClearSvg} from '../../images/svg/ClearSvg';
 import {ConstructModal} from './ConstructModal';
 import {useDispatch} from 'react-redux';
-import {setHelpOpen} from '../../redux/slice/modalsSlice';
+import {setHelpOpen, setPeculiaritiesOpen} from '../../redux/slice/modalsSlice';
 
 export const HelpModal = () => {
   const dispatch = useDispatch();
@@ -17,31 +17,36 @@ export const HelpModal = () => {
     dispatch(setHelpOpen(false));
   };
 
+  const onPeculiaritiesClick = () => {
+    dispatch(setPeculiaritiesOpen(true));
+    dispatch(setHelpOpen(false));
+  };
+
   return (
     <ConstructModal>
       <Header title="Помощь" onClose={onClose} />
       <View style={styles.innerContainer}>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={onPeculiaritiesClick}>
           <AlarmSvg />
-          <Text style={[GlobalStyles.subTitle, {paddingHorizontal: 20}]}>
+          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
             Особенности услуг
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>
           <MessageSvg />
-          <Text style={[GlobalStyles.subTitle, {paddingHorizontal: 20}]}>
+          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
             Чат с оператором
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>
           <HandsetSvg />
-          <Text style={[GlobalStyles.subTitle, {paddingHorizontal: 20}]}>
+          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
             Позвонить в поддержку
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.card}>
           <ClearSvg />
-          <Text style={[GlobalStyles.subTitle, {paddingHorizontal: 20}]}>
+          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
             Отменить заказ
           </Text>
         </TouchableOpacity>
@@ -64,5 +69,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 20,
     marginBottom: 5,
+  },
+  cardPadding: {
+    paddingHorizontal: 20,
   },
 });
