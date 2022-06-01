@@ -90,9 +90,9 @@ export const Map = () => {
         title={courierData.title}
         description={courierData.description}
         image={courierData.imageUrl}>
-        <View style={{zIndex: 2}}>
-          <Image source={courierData.imageUrl} />
-        </View>
+        {/*<View style={{zIndex: 2}}>*/}
+        {/*  <Image source={courierData.imageUrl} />*/}
+        {/*</View>*/}
       </Marker>
     </MapView>
   );

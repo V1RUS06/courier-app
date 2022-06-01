@@ -17,4 +17,8 @@ export const GlobalStyles = StyleSheet.create({
     color: '#4B595C',
     fontWeight: 'bold',
   },
+  infoContainer: {
+    alignItems: 'flex-start',
+    paddingHorizontal: 20,
+  },
 });

@@ -14,30 +14,30 @@ export const DetailsCard = () => {
       <Text style={[GlobalStyles.header, {marginBottom: 20}]}>Детали</Text>
       <View style={styles.line} />
       <View style={styles.cardContainer}>
-        <View style={styles.img}>
+        <View>
           <CardSvg />
         </View>
-        <View style={styles.infoContainer}>
+        <View style={GlobalStyles.infoContainer}>
           <Text style={GlobalStyles.subTitle}>**** 1245</Text>
           <Text style={GlobalStyles.comments}>Банковская карта</Text>
         </View>
       </View>
       <View style={styles.line} />
       <View style={styles.cardContainer}>
-        <View style={styles.img}>
+        <View>
           <RubleSvg />
         </View>
-        <View style={styles.infoContainer}>
+        <View style={GlobalStyles.infoContainer}>
           <Text style={GlobalStyles.subTitle}>325 р.</Text>
           <Text style={GlobalStyles.comments}>Стоимость услуги</Text>
         </View>
       </View>
       <View style={styles.line} />
       <View style={styles.cardContainer}>
-        <View style={styles.img}>
+        <View>
           <CheckSvg />
         </View>
-        <View style={styles.infoContainer}>
+        <View style={GlobalStyles.infoContainer}>
           <Text style={GlobalStyles.subTitle}>Картой по чеку</Text>
           <Text style={GlobalStyles.comments}>Оплата покупок</Text>
         </View>
@@ -54,9 +54,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 15,
-  },
-  img: {
-    marginRight: 20,
   },
   infoContainer: {
     alignItems: 'flex-start',

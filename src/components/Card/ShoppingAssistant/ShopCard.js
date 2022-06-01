@@ -10,7 +10,7 @@ export const ShopCard = ({index, name, address, price, time}) => {
         <CartSvg />
         <Text style={styles.imgIndex}>{index}</Text>
       </View>
-      <View style={{alignItems: 'flex-start'}}>
+      <View style={GlobalStyles.infoContainer}>
         <Text style={GlobalStyles.subTitle}>
           {name} | {price} ₽
         </Text>
@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     position: 'relative',
-    marginRight: 20,
   },
   imgIndex: {
     position: 'absolute',
