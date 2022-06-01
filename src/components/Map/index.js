@@ -64,6 +64,13 @@ export const Map = () => {
         latitudeDelta: 0.015,
         longitudeDelta: 0.0121,
       }}>
+      <Marker
+        key={courierData.id}
+        coordinate={courierData.coordinate}
+        title={courierData.title}
+        description={courierData.description}
+        image={courierData.imageUrl}
+      />
       {markers.map(marker => (
         <Marker
           key={marker.id}
@@ -84,16 +91,6 @@ export const Map = () => {
           onPress={onChangeMarker}
         />
       ))}
-      <Marker
-        key={courierData.id}
-        coordinate={courierData.coordinate}
-        title={courierData.title}
-        description={courierData.description}
-        image={courierData.imageUrl}>
-        {/*<View style={{zIndex: 2}}>*/}
-        {/*  <Image source={courierData.imageUrl} />*/}
-        {/*</View>*/}
-      </Marker>
     </MapView>
   );
 };

@@ -6,6 +6,7 @@ import {FindCourier} from '../Card/FindСourier';
 import {CourierCard} from '../Card/CourierCard';
 import {ShoppingAssistant} from '../Card/ShoppingAssistant';
 import {DetailsCard} from '../Card/DetailsCard';
+import {PurchasesCard} from '../Card/PurchasesCard';
 
 export const OrderSheet = () => {
   const [isStretch, setIesStretch] = useState(true);
@@ -39,6 +40,9 @@ export const OrderSheet = () => {
         </Wrapper>
         <Wrapper>
           <DetailsCard />
+        </Wrapper>
+        <Wrapper>
+          <PurchasesCard />
         </Wrapper>
       </ScrollView>
     </View>
