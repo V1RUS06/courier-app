@@ -6,9 +6,7 @@ import {Button} from '../../Button';
 import {RubleSvg} from '../../../images/svg/RubleSvg';
 import {CheckSvg} from '../../../images/svg/CheckSvg';
 
-export const DetailsCard = () => {
-  const onHelpClick = () => {};
-
+export const DetailsCard = ({onPress}) => {
   return (
     <View style={styles.container}>
       <Text style={[GlobalStyles.header, {marginBottom: 20}]}>Детали</Text>
@@ -44,7 +42,7 @@ export const DetailsCard = () => {
       </View>
       <View style={[styles.line, {marginBottom: 20}]} />
 
-      <Button onPress={onHelpClick} name="Помощь" />
+      <Button onPress={onPress} name="Помощь" />
     </View>
   );
 };

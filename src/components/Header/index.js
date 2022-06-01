@@ -2,16 +2,18 @@ import React from 'react';
 import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import {ClearSvg} from '../../images/svg/ClearSvg';
 
-export const Header = ({title, style, onStretchClick}) => {
+export const Header = ({title, style, onStretchClick, onClose}) => {
   return (
     <View style={[styles.container, style]}>
-      <TouchableOpacity style={styles.clearBtn}>
+      <TouchableOpacity style={styles.clearBtn} onPress={onClose}>
         <ClearSvg />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.stretchBtn} onPress={onStretchClick}>
-        <ClearSvg />
-      </TouchableOpacity>
-      {title && <Text style={styles.text}>Hello</Text>}
+      {onStretchClick && (
+        <TouchableOpacity style={styles.stretchBtn} onPress={onStretchClick}>
+          <ClearSvg />
+        </TouchableOpacity>
+      )}
+      {title && <Text style={styles.text}>{title}</Text>}
     </View>
   );
 };
