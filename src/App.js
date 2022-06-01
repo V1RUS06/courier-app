@@ -9,12 +9,16 @@
 import React from 'react';
 import {Map} from './components/Map';
 import {OrderSheet} from './components/OrderSheet';
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
 
 const App = () => {
   return (
     <>
-      <Map />
-      <OrderSheet />
+      <Provider store={store}>
+        <Map />
+        <OrderSheet />
+      </Provider>
     </>
   );
 };
