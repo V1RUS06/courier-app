@@ -1,5 +1,5 @@
 import {useDispatch} from 'react-redux';
-import {setHelpOpen, setPeculiaritiesOpen} from '../../redux/slice/modalsSlice';
+import {setPeculiaritiesOpen} from '../../redux/slice/modalsSlice';
 import {ConstructModal} from './ConstructModal';
 import {Header} from '../Header';
 import {ScrollView, StyleSheet, Text} from 'react-native';
@@ -10,7 +10,6 @@ export const PeculiaritiesModal = () => {
 
   const onClose = () => {
     dispatch(setPeculiaritiesOpen(false));
-    dispatch(setHelpOpen(true));
   };
 
   return (

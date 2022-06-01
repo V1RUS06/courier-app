@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
   btnText: {
     color: '#4B595C',
     fontSize: 13,
-    marginLeft: 10,
     fontWeight: 'bold',
   },
 });

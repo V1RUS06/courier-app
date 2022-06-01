@@ -7,11 +7,20 @@ import {AlarmSvg} from '../../images/svg/AlarmSvg';
 import {HandsetSvg} from '../../images/svg/HandsetSvg';
 import {ClearSvg} from '../../images/svg/ClearSvg';
 import {ConstructModal} from './ConstructModal';
-import {useDispatch} from 'react-redux';
-import {setHelpOpen, setPeculiaritiesOpen} from '../../redux/slice/modalsSlice';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  setCancelOrder,
+  setHelpOpen,
+  setPeculiaritiesOpen,
+} from '../../redux/slice/modalsSlice';
+import {CancelOrderModal} from './CancelOrderModal';
+import {PeculiaritiesModal} from './PeculiaritiesModal';
 
 export const HelpModal = () => {
   const dispatch = useDispatch();
+  const {cancelOrderOpen, peculiaritiesOpen} = useSelector(
+    state => state.modal,
+  );
 
   const onClose = () => {
     dispatch(setHelpOpen(false));
@@ -19,39 +28,46 @@ export const HelpModal = () => {
 
   const onPeculiaritiesClick = () => {
     dispatch(setPeculiaritiesOpen(true));
-    dispatch(setHelpOpen(false));
+  };
+
+  const onCancelClick = () => {
+    dispatch(setCancelOrder(true));
   };
 
   return (
-    <ConstructModal>
-      <Header title="Помощь" onClose={onClose} />
-      <View style={styles.innerContainer}>
-        <TouchableOpacity style={styles.card} onPress={onPeculiaritiesClick}>
-          <AlarmSvg />
-          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
-            Особенности услуг
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
-          <MessageSvg />
-          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
-            Чат с оператором
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
-          <HandsetSvg />
-          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
-            Позвонить в поддержку
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
-          <ClearSvg />
-          <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
-            Отменить заказ
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </ConstructModal>
+    <>
+      <ConstructModal>
+        <Header title="Помощь" onClose={onClose} />
+        <View style={styles.innerContainer}>
+          <TouchableOpacity style={styles.card} onPress={onPeculiaritiesClick}>
+            <AlarmSvg />
+            <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
+              Особенности услуг
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card}>
+            <MessageSvg />
+            <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
+              Чат с оператором
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card}>
+            <HandsetSvg />
+            <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
+              Позвонить в поддержку
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.card} onPress={onCancelClick}>
+            <ClearSvg />
+            <Text style={[GlobalStyles.subTitle, styles.cardPadding]}>
+              Отменить заказ
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ConstructModal>
+      {peculiaritiesOpen && <PeculiaritiesModal />}
+      {cancelOrderOpen && <CancelOrderModal />}
+    </>
   );
 };
 

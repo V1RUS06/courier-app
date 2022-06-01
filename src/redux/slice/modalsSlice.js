@@ -3,6 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
   helpOpen: false,
   peculiaritiesOpen: false,
+  cancelOrderOpen: false,
 };
 
 export const counterSlice = createSlice({
@@ -15,9 +16,13 @@ export const counterSlice = createSlice({
     setPeculiaritiesOpen(state, action) {
       state.peculiaritiesOpen = action.payload;
     },
+    setCancelOrder(state, action) {
+      state.cancelOrderOpen = action.payload;
+    },
   },
 });
 
-export const {setHelpOpen, setPeculiaritiesOpen} = counterSlice.actions;
+export const {setHelpOpen, setPeculiaritiesOpen, setCancelOrder} =
+  counterSlice.actions;
 
 export default counterSlice.reducer;
